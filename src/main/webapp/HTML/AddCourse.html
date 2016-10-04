@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html data-ng-app = "addCourseApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Course</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../JS/addcourse.js"></script>
+<link rel="stylesheet" href="../CSS/addcourse.css" /> 
+</head>
+<body data-ng-controller = "addCourseController">
+
+
+<header>
+<nav>
+<h2 align="center"><i><b>Learning Point</b></i></h2>
+</nav>
+</header>
+
+<!--  <nav class="navbar navbar-default">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <h3 align="center"><b>STUDENT COURSE REGISTRATION SYSTEM</b></h3>
+       <br><br><br>
+      </div>
+    </nav> -->
+    
+<div class="container">
+    
+<h3 align="center">Add New Course</h3>  
+  <form name="courseForm">
+<div class="row">
+  <div class="col-md-12">
+<div class="panel panel-default">
+  <div class="panel-body">
+  <div class="page-header">
+		<h4><b>Course Info</b></h4>
+  </div>
+
+    <div class="form-group">
+    <label for="CourseName">Course Name</label>
+    <input type="text" class="form-control" id="CourseName" placeholder="Course Name" data-ng-model="coursename" required>
+  </div>
+  <div class="form-group">
+    <label for="Course Description">Course Description</label>
+    <input type="text" class="form-control" id="Course Description" placeholder="Course Description" data-ng-model="coursedesc" required>
+  </div>
+  <div class="form-group">
+    <label for="Course Amount">Course Amount</label>
+    <input type="number" class="form-control" id="Course Amount" placeholder="Please enter a decimar number" data-ng-model="courseamount" ng-pattern="integerval" required>
+  </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+<div class="panel panel-default">
+  <div style="overflow-y: scroll; height:300px;" class="panel-body" >
+  <div class="page-header">
+		<h4><b>Choose Schedule</b></h4>
+  </div>
+  <table  id="schedule" class="table table-bordered"><tr><th>Start Date</th><th>End Date</th><th>Start Time</th><th>End Time</th><th>Days of Week</th><th>Select</th></tr>
+  <tr data-ng-repeat="scheduleValues in schedules"><td>{{scheduleValues.startDate}}</td><td>{{scheduleValues.endDate}} </td><td>{{scheduleValues.startTime}}</td><td>{{scheduleValues.endTime}}</td><td >{{scheduleValues.daysOfWeek}}</td>
+  <td><input type="checkbox" value={{scheduleValues.scheduleId}} 
+  ng-checked = "selectedSchedule.indexOf(scheduleValues.scheduleId) > -1" ng-click="toggleSelectionSchedule(scheduleValues.scheduleId)" ></td></tr>
+  </table>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+<div class="panel panel-default">
+  <div style="overflow-y: scroll; height:300px;" class="panel-body">
+  <div class="page-header">
+		<h4><b>Choose Curriculum</b></h4>
+  </div>
+  
+  <table id="curriculum" class="table table-bordered"><tr><th>TopicNames</th><th>Select</th></tr>
+  <tr data-ng-repeat="curriculumValues in curriculum"><td>{{curriculumValues.topicName}}</td>
+  <td><input type="checkbox" value="{{curriculumValues.curriculumId}}"
+  ng-checked = "selectedCurriculum.indexOf(curriculumValues.curriculumId) > -1" ng-click="toggleSelectionCurriculum(curriculumValues.curriculumId)" ></td>
+  </tr></table>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="panel panel-default">
+  <div style="overflow-y: scroll; height:300px;" class="panel-body">
+ <div class="page-header">
+		<h4><b>Choose Books</b></h4>
+  </div>
+  
+  <table id="book" class="table table-bordered"><tr><th>BookNames</th><th>Select</th></tr>
+  <tr data-ng-repeat="bookValues in books"><td>{{bookValues.bookName}}</td><td><input type="checkbox" value="{{bookValues.bookID}}" 
+  ng-checked = "selectedBooks.indexOf(bookValues.bookID) > -1" ng-click="toggleSelectionBooks(bookValues.bookID)" ></td></tr>
+  </table>
+ 
+  </div>
+</div>
+</div>
+</div>
+
+<!-- <div class="row">
+ <div class="col-md-8" style="padding-top:10px">
+ <button type="reset" style="padding-top:10px" class="btn btn-primary pull-right">Clear</button>
+ </div>
+ <div class="col-sm-2" style="padding-top:10px">
+<button type="submit" style="padding-top:10px" class="btn btn-primary pull-right" data-ng-click="updateData()">Submit</button>
+</div>
+</div> -->
+
+  <button type="reset" class="btn btn-primary pull-right">Clear</button>
+<button type="submit" class="btn btn-primary pull-right" data-ng-click="updateData()">Submit</button> 
+</form>
+</div>
+
+</body>
+</html>

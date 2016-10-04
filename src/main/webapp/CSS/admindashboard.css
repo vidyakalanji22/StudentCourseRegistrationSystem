@@ -1,0 +1,63 @@
+ body {
+	margin :0;
+	background-color :white;
+}
+header {
+	background: #800080;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+
+header h2{
+	margin :0;
+	
+}
+
+h3 {
+	color : black;
+	
+}
+p {
+	font-size: 110%;
+	color: #000000;
+  }
+  
+  
+.panel-body {
+background:#eee;
+
+}
+
+img{
+	margin-left: 10em;
+}
+ 
+ #schedule{
+	width: 50em;
+}
+
+#curriculum{
+width: 20em;
+}
+
+#book{
+	width: 20em;
+}
+
+#tabNames ul li{
+	
+	
+	list-style:none;
+	position: relative;
+	float: left;
+	height:50%;
+	border-bottom-width: 0;
+	margin: 3px 3px 0px 3px;
+	padding: 5px 5px 0px 5px;
+	background-color: #eee;
+	color: #696969;
+
+}
+
+
+

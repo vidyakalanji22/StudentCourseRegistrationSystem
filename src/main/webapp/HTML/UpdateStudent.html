@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html  data-ng-app="updateStudentApp">
+<head>
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<!-- AngularJS script -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<script src="https://code.angularjs.org/1.4.7/angular-cookies.js"></script>
+
+<script src = "../JS/updatestudent.js"></script>
+<link rel="stylesheet" href="../CSS/updatestudent.css" />
+</head>
+<body data-ng-controller="updateStudentCtrl">
+
+
+<header>
+<nav>
+<h2 align="center"><i><b>Learning Point</b></i></h2>
+</nav>
+</header>
+<br><br>
+
+		<!-- <nav class="navbar navbar-default">
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<h3 align="center">
+						<b>STUDENT COURSE REGISTRATION SYSTEM</b>
+					</h3>
+					<br><br>
+				</div>
+			</nav> -->
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+<div class="panel panel-default">
+  <div class="panel-body">
+  <div class="page-header">
+		<h4><b>Edit Profile</b></h4>
+  </div>
+<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">First Name:</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" ng-model="firstName">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Last Name:</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" ng-model="lastName">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Email:</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" value="{{studentsData.emailId}}" ng-model="emailId" placeholder="emailId" disabled>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Old Password:</label>
+				<div class="col-sm-4">
+					<input type="password" class="form-control" ng-model="oldPassword" placeholder="Old Password">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">New Password:</label>
+				<div class="col-sm-4">
+					<input type="password" class="form-control" ng-model="password" placeholder="New Password">
+				</div>
+			</div>
+			<button class="btn btn-success" ng-click="updateUser()">
+				<span class="glyphicon glyphicon-user"></span> SaveChanges
+			</button>
+			<button class="btn btn-success" ng-click="cancel()">
+				 Cancel
+			</button>
+</form>
+</div></div>
+</div></div>
+</div>
+</body>
+</html>

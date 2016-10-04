@@ -1,0 +1,38 @@
+
+ 
+ body {
+	margin :0;
+	background-color :white;
+}
+header {
+	background: #800080;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+
+header h2{
+	margin :0;
+	
+}
+
+
+.navbar-nav{
+	margin : 5;
+}
+
+div.nav ul li { 
+	display: inline;
+	style="margin-left:10%;
+	margin-right:10%;
+	display:block;
+	margin-top:0%;
+	margin-bottom:30%
+}
+
+	
+	
+.panel-body {
+background:#eee;}
+
+
+ 

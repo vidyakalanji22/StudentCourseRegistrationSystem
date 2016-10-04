@@ -1,0 +1,33 @@
+/* .panel-body {
+background:#EBF4FA;}
+ */
+ body {
+	margin :0;
+	background-color :white;
+}
+header {
+	background: #800080;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+
+header h2{
+	margin :0;
+	
+}
+
+h3 {
+	color : black;
+	
+}
+
+.panel-body {
+	h3{
+	color : black;
+	}
+	
+}
+
+.panel-body {
+background: #eee;}
+ 

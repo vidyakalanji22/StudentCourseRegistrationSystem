@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestAll" verbose="2">
+
+  <test name="myTestName">
+	<classes>
+		<class name="com.scr.dao.impl.CourseDAOImplTest">
+		<methods>
+				<include name="getAllCourses_Test" />
+				<include name="getCourseDetails_Test" />
+				<include name="addCourse_Test" />
+				<include name="disableCourse_Test" />
+				<include name="updateCourseInfo_Test" />
+				<include name="updateCourseSchedule_Test" />
+				<include name="updateCourseCurriculum_Test" />
+				<include name="updateCourseBook_Test" />
+			</methods>
+		</class>  
+	</classes>
+  </test>
+ 
+</suite>

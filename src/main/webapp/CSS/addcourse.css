@@ -1,0 +1,30 @@
+
+body {
+	margin :0;
+	background-color :white;
+}
+header {
+	background: #800080;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+
+header h2{
+	margin :0;
+	
+}
+
+.panel-body {
+background:#eee;}
+
+#schedule{
+	width: 50em;
+}
+
+#curriculum{
+width: 20em;
+}
+
+#book{
+	width: 20em;
+}

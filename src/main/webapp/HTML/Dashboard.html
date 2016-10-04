@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html data-ng-app="studentDashboard">
+<head>
+<title>Student Dashboard</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- AngularJS script -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<script src="https://code.angularjs.org/1.4.7/angular-cookies.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="../JS/studentdashboard.js"></script>
+<link rel="stylesheet" href="../CSS/studentdashboard.css" />
+</head>
+
+<body>
+	<div data-ng-controller="studentDashboardCtrl">
+
+		<header>
+			<nav>
+				<h2 align="center">
+					<i><b>Learning Point</b></i>
+				</h2>
+			</nav>
+		</header>
+
+
+		<nav class="navbar navbar-default">
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<!-- <h3 align="center">
+						<b>STUDENT COURSE REGISTRATION SYSTEM</b>
+					</h3> -->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a><button type="button" class="btn btn-primary"
+								ng-click="logout()">Log Off</button> </a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div ng-if="status == '200'"> 
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<h3 align="center" style="color: maroon">Student Dashboard</h3>
+							</div>
+							<a><button type="button" class="btn btn-primary pull-right"
+									data-ng-click="editProfile()">Edit Profile</button></a> <b
+								align="center"> Name : {{studentCourseSchedule.firstName}}
+								{{studentCourseSchedule.lastName}} </b> <br></br> <b> Email :
+								{{studentCourseSchedule.emailId}}</b>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<h4>Courses Enrolled</h4>
+							</div>
+
+							<div ng-repeat="values in studentCourseSchedule.courseList">
+								<table>
+									<tr>
+										<td><h4>{{values.courseName}}</h4></td>
+									</tr>
+								</table>
+								<table class="table table-bordered"
+									data-ng-repeat="schedules in values.scheduleList">
+									<tr>
+										<th>Start Date</th>
+										<th>End Date</th>
+										<th>Start Time</th>
+										<th>End Time</th>
+										<th>Click</th>
+									</tr>
+									<tr>
+										<td>{{schedules.startDate}}</td>
+										<td>{{schedules.endDate}}</td>
+										<td>{{schedules.startTime.split("-")[0]}}</td>
+										<td>{{schedules.endTime.split("-")[0]}}</td>
+										<td><button type="button" class="btn btn-danger"
+												data-ng-click="dropCourse(values.courseId,schedules.scheduleId)">Drop
+												Course</button></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div> 
+			 <div ng-if="status != '200'">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="page-header">
+									<h3 align="center" style="color: maroon">Student Dashboard</h3>
+								</div>
+								<b align="center"> Name : {{firstName}} {{lastName}} </b> <br></br>
+								<b> Email : {{email}}</b>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h4 align="center">You have not enrolled for any courses</h4>
+			</div> 
+
+			<button type="button" class="btn btn-primary"
+				style="margin-left: auto; margin-right: auto; display: block; margin-top: 3%; margin-bottom: 0%"
+				ng-click="gotoCourses()">Browse Courses</button>
+		</div>
+	</div>
+</body>
+</html>
